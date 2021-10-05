@@ -74,7 +74,7 @@ def nmap(ip, ipv4):
     param_four = '-O'
     param_five = '-6'
     if ipv4 == True:
-        command = ['nmap', "--host-timeout", "50", "T1", param_one, param_two, param_three param_four, ip]
+        command = ['nmap', "--host-timeout", "50", "-T1", param_one, param_two, param_three param_four, ip]
         process = subprocess.run(command, check=True, stdout=subprocess.PIPE, universal_newlines=True)
         output = process.stdout
         return output
