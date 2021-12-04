@@ -76,12 +76,12 @@ def nmap(ip, ipv4):
     param_four = '-O'
     param_five = '-6'
     if ipv4 == True:
-        command = ['nmap', ip]
+        command = ['nmap', param_two, param_four, ip]
         process = subprocess.run(command, check=True, stdout=subprocess.PIPE, universal_newlines=True)
         output = process.stdout
         return output
     else:
-        command = ['nmap', param_five, ip]
+        command = ['nmap', param_five, param_two, param_four, ip]
         process = subprocess.run(command, check=True, stdout=subprocess.PIPE, universal_newlines=True)
         output = process.stdout
         return output
